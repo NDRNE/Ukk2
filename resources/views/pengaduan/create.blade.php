@@ -5,38 +5,38 @@
 <div class="col-md-12">
   <div class="card card-primary">
     <div class="card-header">
-      <h3 class="card-title">PENGADUAN MASYARAKAT</h3>
+      <h1 class="card-title">PENGADUAN MASYARAKAT</h1>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form action="/pengaduan" method="POST">
-        @csrf
+    <form action="{{ route('pengaduan.store') }}" method="POST" enctype="multipart/form-data">
+      @csrf
       <div class="card-body">
-        <div class="form-group" >
-          <label for="Nisn">users Id</label>
-            <input type="text" name="users_id" class="form-control" id="users_id" placeholder="Masukan Users_Id">
-          </div>
           <div class="form-group">
-            <label for="Nama">tgl pengaduan</label>
-            <input type="date" name="tgl_pengaduan" class="form-control" id="tgl_pengaduan" placeholder="tanggal_pengaduan">
+            <label for="Alamat">Isi Laporan</label>
+            <textarea 
+              class="form-control" 
+              name="isi_laporan" rows="5" 
+              id="isi_laporan" placeholder="isi_laporan">{{ old('isi_laporan') }}</textarea>
           </div>
-        <div class="form-group">
-            <label for="Alamat">Isi laporan</label>
-            <textarea class="form-control" name="isi_laporan" rows="3" id="isi_laporan" placeholder="isi_laporan"></textarea>
-          </div>
-          </div>
+          @error('isi_laporan')
+            <div class="alert alert-danger" role="alert">{{ $message }}</div>
+          @enderror
           <div class="form-group" >
-          <label for="Nisn">foto</label>
-            <input type="text" name="foto" class="form-control" id="foto" placeholder="Masukan foto">
+            <label for="formFile" class="form-label">Pilih File</label>
+            <input class="form-control" type="file" id="formFile" name="foto">
           </div>
-          <div class="form-group" >
-          <label for="Nisn">status</label>
-            <input type="enum" name="status" class="form-control" id="status" placeholder="Status ">
-          </div>
-      
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
+          @error('foto')
+            <div class="alert alert-danger" role="alert">{{ $message }}</div>
+          @enderror
+        </div>
+      </p>
+    </div>
+    <div class="card-footer">
+      <input type="submit" class="btn btn-primary ml-3" value="Submit">
+      <a href="/pengaduan" class="btn btn-secondary ml-3" style="float:left;">Back</a>
+    </div>
+  </form>
   </div>
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
@@ -51,4 +51,5 @@
   -->
   </body>
   </html>
-@endsection
+
+  @endsection
