@@ -34,7 +34,7 @@
     </div>
     <div class="card-footer">
       <input type="submit" class="btn btn-primary ml-3" value="Submit">
-      <a href="/pengaduan" class="btn btn-secondary ml-3" style="float:left;">Back</a>
+      <a href="/pengaduan" class="btn btn-danger ml-3" style="float:left;">Back</a>
     </div>
   </form>
   </div>

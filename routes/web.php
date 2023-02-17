@@ -8,7 +8,6 @@ use App\Http\Controllers\RegisterController;
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

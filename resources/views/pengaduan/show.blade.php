@@ -5,20 +5,20 @@
 <div class="col-md-12">
   <div class="card card-primary">
     <div class="card-header">
-      <h1 class="card-title">PENGADUAN MASYARAKAT</h1>
+      <h3 class="card-title">PENGADUAN MASYARAKAT</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
       <div class="card-body">
         <div class="form-group">
-          <label for="">Nama Pelapor</label>
-          <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduans->user->name }}" disabled>
-        </div>
-        <div class="form-group">
+            <label for="">Nama Pelapor</label>
+            <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduans->user->name }}" disabled>
+          </div>
+          <div class="form-group">
           <label for="">Tanggal Pengaduan</label>
           <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduans->tgl_pengaduan }}" disabled>
         </div>
-          <div class="form-group">
+        <div class="form-group">
             <label for="Alamat">Isi Laporan</label>
             <textarea 
               class="form-control" 
@@ -30,12 +30,10 @@
             <img src="{{ url('storage/' . $pengaduans->foto) }}" alt="" srcset="">
           </div>
 
-        </div>
-      </p>
-    </div>
-    <div class="card-footer">
-      <a href="/pengaduan" class="btn btn-secondary ml-3" style="float:left;">Back</a>
-    </div>
+          <div class="card-footer">
+           <a href="/pengaduan" calss="btn btn-secondary ml-3" style="float:left;">Back<a/>
+      </div>
+    </form>
   </div>
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
