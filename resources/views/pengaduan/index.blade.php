@@ -33,7 +33,7 @@
           <td>{{ $loop->iteration }}</td>
           <td>{{ $item->tgl_pengaduan}}</td>
           <td>{{ $item->isi_laporan}}</td>
-          <td>{{ $item->session_status == '0' ? 'Belum' : $item->status }}</td>        
+          <td>{{ $item->status == '0' ? 'Belum' : $item->status }}</td>        
           <td>
             
           <form action="{{ route('pengaduan.destroy', $item->id) }}" method="POST">

@@ -31,7 +31,7 @@
           </div>
 
           <div class="card-footer">
-           <a href="/pengaduan" calss="btn btn-secondary ml-3" style="float:left;">Back<a/>
+           <a href="/pengaduan" calss="btn btn-secondary ml-3" style="float:left;">Back</a>
       </div>
     </form>
   </div>
