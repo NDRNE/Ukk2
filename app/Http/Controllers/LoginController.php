@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,34 +12,38 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
-    
-    public function proses(Request $request)
+    public function forgot()
     {
-        $user = $request -> validate([
-            'username' => 'required',
-            'password' => 'required'
-        ]);
+        return view('auth.forgot');
+    }
 
-        if (Auth::attempt($user))
-        {
-            $request->session()->regenerate();
-            $user = Auth::user();
-            
+    public function proses(request $request)
+    {
+        $user = $request->validate([
+                'username' => 'required',
+                'password' => 'required',
+        ]);
+            if (Auth::attempt($user)) {
+                $request->session()->regenerate();
+                $user = Auth::user();
+
             if ($user->level == 'admin') {
                 return redirect()->route('dashboard.admin');
-            } else if ( $user->level == 'petugas'){
+            } else if ($user->level == 'petugas') {
                 return redirect()->route('dashboard.petugas');
-            } else if ($user->level == 'masyarakat') {
+            }else if ($user->level == 'masyarakat') {
                 return redirect()->route('dashboard.masyarakat');
             } else {
                 return redirect()->route('login');
             }
-    }
+            
+        }
 
-    return back()->WithErrors([
-        'username' => 'The provided credentials do not match our records.',
-    ])->onlyInput('username');
-    
+        
+
+            return back()->WithErrors([
+                'username' => 'The provided credentials do not match our records.',
+            ])->onlyInput('username');
     }
     public function logout(Request $request)
     {
@@ -47,4 +52,5 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         return redirect('/login');
     }
+
 }

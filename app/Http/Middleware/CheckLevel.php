@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CheckLevel
+class Checklevel
 {
     /**
      * Handle an incoming request.
@@ -16,13 +17,13 @@ class CheckLevel
      */
     public function handle(Request $request, Closure $next)
     {
-        $levels = array_slice(fun_get_args(), 2);
-        foreach($levels as $level) {
+        $levels = array_slice(func_get_args(), 2);
+        foreach ($levels as $level) {
             $user = Auth::user()->level;
             if( $user == $level){
                 return $next($request);
             }
         }
-        return redirect()->route('error.403');
+        return redirect()->route('error,403');
     }
 }
