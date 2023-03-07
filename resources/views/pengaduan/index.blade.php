@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('judul')
-    <h1>DATA TABLE</h1>
+    <h1>DATA PENGADUAN MASYARAKAT</h1>
 @endsection
 
 @section('content')

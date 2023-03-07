@@ -16,10 +16,10 @@ class RegisterController extends Controller
     {
         $data = request()->validate(
             [
-                'name' => 'required|min:2|max:25',
+                'name' => 'required',
                 'username' => 'required|unique:users,username',
-                'password' => 'required|min:8',
-                'telepon' => 'required|numeric',
+                'telp' => 'required|numeric',
+                'password' => 'required',
             ],
             [
                 'name.required' => 'Nama tidak boleh kosong',
@@ -29,8 +29,8 @@ class RegisterController extends Controller
                 'username.unique' => 'Username sudah terdaftar',
                 'password.required' => 'Password tidak boleh kosong',
                 'password.min' => 'Password terlalu pendek',
-                'telepon.required' => 'Telepon tidak boleh kosong',
-                'telepon.numeric' => 'Telepon harus berupa angka',
+                'telp.required' => 'Telepon tidak boleh kosong',
+                'telp.numeric' => 'Telepon harus berupa angka',
             ]
             );  
 
@@ -39,7 +39,7 @@ class RegisterController extends Controller
                 'username' => Str::lower($data['username']),
                 'password' => bcrypt($data['password']),
                 'level' => 'masyarakat',
-                'telepon' => $data['telepon'],
+                'telp' => $data['telp'],
             ]);
             return redirect('/login');
     }

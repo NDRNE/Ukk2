@@ -52,3 +52,5 @@ Route::middleware(['auth', 'level:petugas'])->group(function () {
 Route::middleware(['auth', 'level:masyarakat'])->group(function () {
     Route::get('/dashboard/masyarakat', [DashboardController::class, 'masyarakat'])->name('dashboard.masyarakat');
 });
+
+Route::view('/', 'home');

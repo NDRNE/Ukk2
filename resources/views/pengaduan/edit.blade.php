@@ -28,11 +28,12 @@
               class="form-control" 
               name="isi_laporan" rows="5" 
               id="isi_laporan" placeholder="isi_laporan">{{ $pengaduan->isi_laporan }}</textarea>
-              </div>
+          </div>
           <div class="form-group" >
             <label for="formFile" class="form-label">Foto</label>
             <img src="{{ url('storage/' . $pengaduan->foto) }}" alt="" srcset="" style="width:500px;">
           </div>
+
           <div class="card-footer">
            <button type= "submit" class="btn btn-primary" style="float:right">Save</button>
            <a href="/pengaduan" class="btn btn-secondary ml-3" style="float:left;">Back</a>

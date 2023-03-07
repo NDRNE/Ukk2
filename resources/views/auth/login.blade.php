@@ -13,12 +13,30 @@
   <link rel="stylesheet" href="{{asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css') }}">
+  <style>
+    button {
+      transition: width 2s;
+    }
+    button:hover {
+      opacity: 0.7;
+    }
+    body {
+      
+       background-image: url("{{asset('adminlte/dist/img/loginpengaduan.jpg')}}");
+       height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
+<div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="{{ asset('adminlte/index2.html') }}" class="h1"><b>Pengaduan </b>Masyarakat</a>
+    </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
@@ -60,21 +78,13 @@
       </form>
 
       <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
       </div>
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="/register" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
