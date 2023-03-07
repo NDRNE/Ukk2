@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     PengaduanController,
     LoginController,
     DashboardController,
-    RegisterController
+    RegisterController,
+    UserController
 };
 
 /*
@@ -54,3 +55,6 @@ Route::middleware(['auth', 'level:masyarakat'])->group(function () {
 });
 
 Route::view('/', 'home');
+
+Route::get('user', [UserController::class, 'index']);
+Route::get('generatepdf', [UserController::class, 'generatepdf'])->name('user.pdf');

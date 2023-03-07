@@ -49,7 +49,7 @@
                 @else
                   <a class="btn btn-primary"  href="/pengaduan/{{ $item->id }}/">Detail</a>
                   @if ($item->status == 'selesai')
-                  <a class="btn btn-secondary"  href="">Cetak</a>
+                  <a class="btn btn-secondary"  href="/user">Cetak</a>
 
                   @else
                   <a class="btn btn-secondary"  href="{{ route('tanggapan.create', $item->id) }}">Tanggapan</a>
